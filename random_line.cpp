@@ -1,35 +1,25 @@
-#include<Windows.h>
-#define MX 99999
+#include<bits/stdc++.h>
+#include<conio.h>
 #include<graphics.h>
-#include<time.h>
-#include <unistd.h>
+using namespace std;
 
 int main()
 {
     int gd=DETECT,gm;
     initgraph(&gd,&gm,"");
-
-    for(int t=1; t<=10; t++)
-    {
-        setcolor(GREEN);
-        line(rand()%450,rand()%450,rand()%450,rand()%450);
-        usleep(MX);
-        cleardevice();
-
-        setcolor(RED);
-        line(rand()%350,rand()%350,rand()%350,rand()%350);
-        usleep(MX);
-        cleardevice();
-
-        setcolor(BLUE);
-        line(rand()%450,rand()%350,rand()%450,rand()%350);
-        usleep(MX);
-        cleardevice();
-
+    int n=0;
+    while(1){
+        n++;
+        setcolor(rand()%20);
+        line(rand()%100,rand()%200,rand()%600,rand()%400);
+        delay(100);
+        if(n>100){
+            cleardevice();
+            n=0;
+        }
     }
     getch();
     closegraph();
+
     return 0;
 }
-
-
